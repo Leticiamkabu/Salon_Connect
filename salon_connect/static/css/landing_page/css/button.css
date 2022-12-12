@@ -1,0 +1,9 @@
+.col-2 p{
+    font-size: 50px; 
+    color: white; 
+    font-family:'Times New Roman'
+}
+
+.btn btn-outline-*{
+    color: red;
+}
