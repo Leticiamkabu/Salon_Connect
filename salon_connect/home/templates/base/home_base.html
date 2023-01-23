@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salon Connect</title>
+
+    <!-- Landing page links -->
+    <link rel="stylesheet" href="{% static 'css\landing_page\css\button.css' %}">
+
+    <meta name="description" content="Free bootstrap template Atlas">
+    <link rel="icon" href="{% static 'img\landing_page\img\favicon.png' %}" sizes="32x32" type="image/png">
+    <!-- custom.css -->
+    <link rel="stylesheet" href="{% static 'css\landing_page\css\custom.css' %} ">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="{% static 'css\landing_page\css\bootstrap.min.css' %}">
+	<!-- font-awesome -->
+    <link rel="stylesheet" href="{% static 'font\landing_page\font-awesome-4.7.0\css\font-awesome.min.css' %} ">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="{% static 'css\landing_page\css\aos.css' %} ">
+    <!-- Landing_end -->
+
+</head>
+
+
+    
+
+
+
+<body>
+    
+    {% block content %}
+
+    {% endblock %}
+
+
+<!-- landing_page scripts  -->
+    <!-- AOS -->
+    <script src="{% static 'js\landing_page\js\aos.js' %} "></script>
+    <script>
+      AOS.init({
+      });
+    </script>
+<!-- landing_end -->
+
+</body>
+</html>
+
