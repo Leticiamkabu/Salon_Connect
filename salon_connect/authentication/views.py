@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-
+from .models import *
 from .forms import *
-
+# from django.contrib.
 # display messages
 from django.contrib import messages
 
@@ -10,58 +10,70 @@ from django.contrib.auth import authenticate, login, logout
 
 # decorators to resict access of pages.
 from django.contrib.auth.decorators import login_required
+
+from django.contrib.auth.forms import AuthenticationForm
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 # Create your views here.
 
 # login
 def login_view(request):
     if request.method == 'POST':
-       username = request.POST.get('username')
-       password = request.POST.get('password')
-       
-       user = authenticate(request, username=username, password=password)
-       
-       if user is not None:
-           login(request, user)
-           return redirect('log-in')
-       else:
-           messages.info(request, 'Username or Password is not valid ')
-       
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+        print(user)
+
+        if user is not None:
+            print("yes")
+            login(request, user)
+            if user.role == "U":
+                return redirect('auth:reg' )
+
+            elif user.role == "S":
+                return redirect('auth:log-in' )
+
+        else:
+            print("does not work")
+
     return render(request, 'login/login.html')
 
 
-# register
-# def register_view(request):
-#     if request.user.is_authenticated:
-#         messages.success(request, 'Account was creates successfully')
-#         return redirect('')
-#     else:
-#         form = RegisterationForm()
-        
-#         if request.method == "POST":
-#             form =  RegisterationForm(request.POST)
-#             if form.is_valid():
-#                 form.save()
-#                 login(request, form.save())
-#                 user = form.cleaned_data.get('username')this gets the username when created
-#                 messages.success(request, 'Account was creates successfully' + user)  this displaces a sucess message when account has been created.
-#                 return redirect('auth:log-in')
-            
-                
-#         context = {
-#             'form': form
-#         }
-        
-#         return render(request, 'register/register.html',context)
+
 
 def register_view(request):
-    form = RegisterationForm()
+    
     if request.method == "POST":
-            form =  RegisterationForm(request.POST)
-            if form.is_valid():
-                form.save()
-                return render(request, 'login/login.html')
-            else:
-                messages.error(request, 'Account was not created')
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        roles = request.POST['role']
+        
+        
+        if roles == "U":
+            user = UserRegistration(
+            username = username,
+            email = email,
+            role = roles
+            )
+            
+        if roles == "S":
+            user = UserRegistration(
+            username = username,
+            email = email,
+            role = roles
+            )
+
+        
+        user.set_password(password1)
+        user.save()
+        
+        return redirect('auth:log-in' )
+        # else:
+        #         messages.error(request, 'Account was not created')
     else:
         form = RegisterationForm()
     context = {

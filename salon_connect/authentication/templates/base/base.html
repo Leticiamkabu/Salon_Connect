@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hexzy - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="ThemeDesign" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- login -->
+        <link href="{% static 'css/log/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/log/icons.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/log/style.css' %}" rel="stylesheet" type="text/css">
+
+        <!-- register -->
+        <link href="{% static 'css/reg/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/reg/icons.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/reg/style.css' %}" rel="stylesheet" type="text/css">
+    </head>
+
+        <body>
+        
+            {% block login %}
+
+            {% endblock %}
+
+
+            {% block register %}
+
+            {% endblock %}
+
+
+            <!-- login -->
+            <!-- jQuery  -->
+            <script src="{% static 'js/log/jquery.min.js' %}"></script>
+            <script src="{% static 'js/log/bootstrap.bundle.min.js' %}"></script>
+            <script src="{% static 'js/log/modernizr.min.js' %}"></script>
+            <script src="{% static 'js/log/detect.js' %}"></script>
+            <script src="{% static 'js/log/fastclick.js' %}"></script>
+            <script src="{% static 'js/log/jquery.slimscroll.js' %}"></script>
+            <script src="{% static 'js/log/jquery.blockUI.js' %}"></script>
+            <script src="{% static 'js/log/waves.js' %}"></script>
+            <script src="{% static 'js/log/wow.min.js' %}"></script>
+            <script src="{% static 'js/log/jquery.nicescroll.js' %}"></script>
+            <script src="{% static 'js/log/jquery.scrollTo.min.js' %}"></script>
+
+            <script src="{% static 'js/log/app.js' %}"></script>
+
+
+            <!-- register -->
+            <!-- jQuery  -->
+            <script src="{% static 'js/reg/jquery.min.js' %}"></script>
+            <script src="{% static 'js/reg/bootstrap.bundle.min.js' %}"></script>
+            <script src="{% static 'js/reg/modernizr.min.js' %}"></script>
+            <script src="{% static 'js/reg/detect.js' %}"></script>
+            <script src="{% static 'js/reg/fastclick.js' %}"></script>
+            <script src="{% static 'js/reg/jquery.slimscroll.js' %}"></script>
+            <script src="{% static 'js/reg/jquery.blockUI.js' %}"></script>
+            <script src="{% static 'js/reg/waves.js' %}"></script>
+            <script src="{% static 'js/reg/wow.min.js' %}"></script>
+            <script src="{% static 'js/reg/jquery.nicescroll.js' %}"></script>
+            <script src="{% static 'js/reg/jquery.scrollTo.min.js' %}"></script>
+
+            <script src="{% static 'js/reg/app.js' %}"></script>
+        </body>
+
+</html>

@@ -1,24 +1,8 @@
+{% extends 'base/base.html'%}
 {% load static %}
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Hexzy - Responsive Admin Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="ThemeDesign" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <link href="{% static 'css/log/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'css/log/icons.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'css/log/style.css' %}" rel="stylesheet" type="text/css">
-
-    </head>
 
 
-    <body>
+{% block login %}
 
         <!-- Begin page -->
         <div class="accountbg"></div>
@@ -35,17 +19,17 @@
                         <p id => {{message}}</p>
                     {% endfor %}
 
-                    <form class="form-horizontal m-t-20" action="index.html">
+                    <form class="form-horizontal m-t-20" action="#" method = "POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="col-12">
-                                <input class="form-control" type="text" required="" placeholder="Username">
+                                <input class="form-control" type="text" required="" placeholder="Username" name = "username">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-12">
-                                <input class="form-control" type="password" required="" placeholder="Password">
+                                <input class="form-control" type="password" required="" placeholder="Password" name = "password">
                             </div>
                         </div>
 
@@ -81,21 +65,4 @@
         </div>
 
 
-
-        <!-- jQuery  -->
-        <script src="{% static 'js/log/jquery.min.js' %}"></script>
-        <script src="{% static 'js/log/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'js/log/modernizr.min.js' %}"></script>
-        <script src="{% static 'js/log/detect.js' %}"></script>
-        <script src="{% static 'js/log/fastclick.js' %}"></script>
-        <script src="{% static 'js/log/jquery.slimscroll.js' %}"></script>
-        <script src="{% static 'js/log/jquery.blockUI.js' %}"></script>
-        <script src="{% static 'js/log/waves.js' %}"></script>
-        <script src="{% static 'js/log/wow.min.js' %}"></script>
-        <script src="{% static 'js/log/jquery.nicescroll.js' %}"></script>
-        <script src="{% static 'js/log/jquery.scrollTo.min.js' %}"></script>
-
-        <script src="{% static 'js/log/app.js' %}"></script>
-
-    </body>
-</html>
+{% endblock %}
