@@ -1,0 +1,347 @@
+{% extends 'base/user_base.html' %}
+{% load static %}
+
+
+{% block user %}
+
+<!-- <div class = "tops">
+
+</div> -->
+    <div class="header-bg">
+        
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <!-- first nav -->
+            <div class="navbar1-custom">
+                <div class="container-fluid">
+
+                    <div id="navigation1">
+
+                        <!-- Navigation Menu-->
+                        <ul class="navigation1-menu">
+
+                            <li class="has-submenu">
+                                <a >Welcome {user.name} </a>
+                                
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> More </a>
+                                <div class="dropdown-content">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalLong3">Profile</a>
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalLong4">Notification</a>
+                                    <a href="{% url 'auth:log-out'%}">Log out</a>
+                                </div>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> Logout </a>
+                            </li>
+
+                            
+
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+                <!-- end container -->
+            </div>
+            
+
+
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+
+                    <div id="navigation">
+
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu">
+                                <a href="{% url 'user:user_dashboard'%}"><i class="ti-home"></i> Dashboard</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong1">Bookings </a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> Transactions </a>
+                            </li>
+
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+    </div>
+    <!-- header-bg -->
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="page-title m-0">Dashboard</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">8952</h2>
+                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">6521</h2>
+                                    <p class="text-muted mb-0 mt-2">New Orders</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">4526</h2>
+                                    <p class="text-muted mb-0 mt-2">New Users</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">5621</h2>
+                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- next -->
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">8952</h2>
+                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">6521</h2>
+                                    <p class="text-muted mb-0 mt-2">New Orders</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">4526</h2>
+                                    <p class="text-muted mb-0 mt-2">New Users</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">5621</h2>
+                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+           
+                    
+
+            
+            <!-- end container-fluid -->
+        </div>
+    </div>
+        <!-- end wrapper -->
+
+    
+    <!-- pop up view for bookings -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Bookings View</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- end pop up -->
+
+
+
+    <!-- pop up view for transactions -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Transactions View</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- end pop up -->
+
+    <!-- pop up view for profile -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Profile View</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- end pop up -->
+
+    <!-- pop up view for notifications -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Notification View</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    <!-- end pop up -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        © 2022 SalCon <span class="d-none d-md-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by MergeDesign.</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+{% endblock %}
