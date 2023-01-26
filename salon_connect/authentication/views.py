@@ -30,7 +30,7 @@ def login_view(request):
             print("yes")
             login(request, user)
             if user.role == "U":
-                return redirect('auth:reg' )
+                return redirect('user:user_dashboard' )
 
             elif user.role == "S":
                 return redirect('auth:log-in' )
@@ -84,7 +84,7 @@ def register_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('log-in')
+    return redirect('auth:log-in')
 
 
 # @login_required(login_url = 'log-in')

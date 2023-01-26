@@ -1,0 +1,30 @@
+
+.has-submenu:hover .dropdown-content {
+  display: block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #74f59f;
+  width: 100px !important;
+  box-shadow: 0px 8px 16px 0px rgba(146, 145, 145, 0.2);
+  z-index: 1;
+  height: 150px!important;
+  right: -1050px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(252, 248, 248);
+  color: black;
+}
