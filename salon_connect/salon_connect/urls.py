@@ -24,8 +24,14 @@ urlpatterns = [
     path('authentication/',include('authentication.urls')),
     path('',include('home.urls')),
     path('user/',include('user.urls')),
-    path('service_provider/',include('service_provider.urls'))
+    path('service_provider/',include('service_provider.urls')),
+    path('salons/',include('salon.urls'))
 
    
     
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

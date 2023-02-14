@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "home",
     "user",
     "service_provider",
+    'salon',
 ]
 
 MIDDLEWARE = [

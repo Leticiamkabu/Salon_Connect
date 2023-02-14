@@ -29,11 +29,11 @@ def login_view(request):
         if user is not None:
             print("yes")
             login(request, user)
-            if user.role == "U":
+            if user.role == "User":
                 return redirect('user:user_dashboard' )
 
-            elif user.role == "S":
-                return redirect('auth:log-in' )
+            elif user.role == "Service_Provider":
+                return redirect('service_provider:service_provider_dashboard' )
 
         else:
             print("does not work")
@@ -53,14 +53,14 @@ def register_view(request):
         roles = request.POST['role']
         
         
-        if roles == "U":
+        if roles == "User":
             user = UserRegistration(
             username = username,
             email = email,
             role = roles
             )
             
-        if roles == "S":
+        if roles == "Service_Provider":
             user = UserRegistration(
             username = username,
             email = email,
