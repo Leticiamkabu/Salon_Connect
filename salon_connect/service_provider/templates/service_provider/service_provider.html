@@ -1,0 +1,451 @@
+{% extends 'base\service_provider_base.html' %}
+{% load static %}
+
+
+{% block service_provider %}
+
+    <div class="header-bg">
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container-fluid">
+
+                    <!-- Logo-->
+                    <div>
+                        <a href="index.html" class="logo">
+                            SALCON
+                        </a>
+                    </div>
+                    <!-- End Logo-->
+
+                    <div class="menu-extras topbar-custom navbar p-0">
+                       <div class = "h-arrange">
+
+                        <li class = "nav-lists">
+                            <a href="#"> Welcome {user.name} </a>
+                        </li>
+
+                        <li class = "nav-lists">
+                            <div class = "drop">
+                                <a href="#"> Components </a>
+                                    <ul class = "h-arrange-sub">
+                            
+                                        <li class = "h-arrange-list">
+                                            <a data-toggle="modal" data-target="#exampleModalLong4"> Notification</a>
+                                
+                                        </li>
+
+                                        <li class = "h-arrange-list">
+                                            <a data-toggle="modal" data-target="#exampleModalLong5">Profile </a>
+                                        </li>
+                                    </ul>
+                            <div>
+                            
+
+                        </li>
+
+                        <li class = "nav-lists">
+                            <a href="{% url 'auth:log-out'%}"> Logout </a>
+                        </li>
+                         
+                       
+                        
+                       </div>
+                        
+                        
+
+                    </div>
+                    <!-- end menu-extras -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+
+                    <div id="navigation">
+
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu">
+                                <a href="{% url 'user:user_dashboard'%}"><i class="ti-home"></i> Dashboard</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong1">Create Services </a>
+                                
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2">Bookings </a>
+                                
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong3"> Transactions </a>
+                                
+                            </li>
+
+                            
+
+                            
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+    </div>
+    <!-- header-bg -->
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="page-title m-0">Dashboard</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">8952</h2>
+                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">6521</h2>
+                                    <p class="text-muted mb-0 mt-2">New Orders</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-primary mb-0">4526</h2>
+                                    <p class="text-muted mb-0 mt-2">New Users</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div>
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <div class="float-right">
+                                    <h2 class="text-info mb-0">5621</h2>
+                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
+                                </div>
+                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+        <!-- end wrapper -->
+
+        <!-- models section -->
+
+        <!-- pop up view for creating services -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Create service </p>
+
+                    <form class="form-horizontal m-t-20", action="", method ="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.first_name.label}}
+                                    {{create_service.first_name}}
+                                </div>
+                                {% comment %} <input class="form-control" type="text" required="" placeholder="Username"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.last_name.label}}
+                                    {{create_service.last_name}}
+                                </div>
+                                {% comment %} {{form.email}} {% endcomment %}
+                                {% comment %} <input class="form-control" type="email" required="" placeholder="Email"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.salon_name.label}}
+                                    {{create_service.salon_name}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.first_name.label}}
+                                    {{create_service.first_name}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.salon_services.label}}
+                                    {{create_service.salon_services}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.opening_and_closing_time.label}}
+                                    {{create_service.opening_and_closing_time}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.location.label}}
+                                    {{create_service.location}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.image.label}}
+                                    {{create_service.image}}
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="form-control">
+                                    {{create_service.salon_color.label}}
+                                    {{create_service.salon_color}}
+                                </div>
+                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                            </div>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <div class="col-12">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="checkbox-signup" type="checkbox" checked="checked">
+                                    <label for="checkbox-signup">
+                                        I accept <a href="#">Terms and Conditions</a>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center m-t-40">
+                            <div class="col-12">
+                                <button class="btn btn-primary btn-block btn-lg waves-effect waves-light" type="submit">Create Service</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-30 m-b-0">
+                            <div class="col-sm-12 text-center">
+                                <a href="{% url 'auth:log-in' %}" class="text-muted">Already have account?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+         <!-- pop up view for bookings -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Booked Services</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Booked Services </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+          <!-- pop up view for transactions -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Transactions made</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> transactions </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+          <!-- pop up view for bookings -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Notifiacteion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Notification </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+          <!-- pop up view for bookings -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> User Profile </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- end of model -->
+
+       <!-- Footer -->
+     <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    © 2022 SalCon <span class="d-none d-md-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by MergeDesign.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+{% endblock %}
+
+       

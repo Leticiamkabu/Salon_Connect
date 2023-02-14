@@ -1,54 +1,68 @@
-{% extends 'base/user_base.html' %}
+{% extends 'base\service_provider_base.html' %}
 {% load static %}
 
 
-{% block user %}
+{% block service_provider %}
 
-<!-- <div class = "tops">
-
-</div> -->
     <div class="header-bg">
-        
         <!-- Navigation Bar-->
         <header id="topnav">
-            <!-- first nav -->
-            <div class="navbar1-custom">
+            <div class="topbar-main">
                 <div class="container-fluid">
 
-                    <div id="navigation1">
+                    <!-- Logo-->
+                    <div>
+                        <a href="index.html" class="logo">
+                            SALCON
+                        </a>
+                    </div>
+                    <!-- End Logo-->
 
-                        <!-- Navigation Menu-->
-                        <ul class="navigation1-menu">
+                    <div class="menu-extras topbar-custom navbar p-0">
+                       <div class = "h-arrange">
 
-                            <li class="has-submenu">
-                                <a >Welcome {user.name} </a>
+                        <li class = "nav-lists">
+                            <a href="#"> Welcome {user.name} </a>
+                        </li>
+
+                        <li class = "nav-lists">
+                            <div class = "drop">
+                                <a href="#"> Components </a>
+                                    <ul class = "h-arrange-sub">
+                            
+                                        <li class = "h-arrange-list">
+                                            <a data-toggle="modal" data-target="#exampleModalLong4"> Notification</a>
                                 
-                            </li>
+                                        </li>
 
-                            <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> More </a>
-                                <div class="dropdown-content">
-                                    <a href="#" data-toggle="modal" data-target="#exampleModalLong3">Profile</a>
-                                    <a href="#" data-toggle="modal" data-target="#exampleModalLong4">Notification</a>
-                                    <a href="{% url 'auth:log-out'%}">Log out</a>
-                                </div>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> Logout </a>
-                            </li>
-
+                                        <li class = "h-arrange-list">
+                                            <a data-toggle="modal" data-target="#exampleModalLong5">Profile </a>
+                                        </li>
+                                    </ul>
+                            <div>
                             
 
-                        </ul>
-                        <!-- End navigation menu -->
+                        </li>
+
+                        <li class = "nav-lists">
+                            <a href="{% url 'auth:log-out'%}"> Logout </a>
+                        </li>
+                         
+                       
+                        
+                       </div>
+                        
+                        
+
                     </div>
-                    <!-- end #navigation -->
+                    <!-- end menu-extras -->
+
+                    <div class="clearfix"></div>
+
                 </div>
                 <!-- end container -->
             </div>
-            
-
+            <!-- end topbar-main -->
 
             <!-- MENU Start -->
             <div class="navbar-custom">
@@ -63,14 +77,20 @@
                                 <a href="{% url 'user:user_dashboard'%}"><i class="ti-home"></i> Dashboard</a>
                             </li>
 
+
                             <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong1">Bookings </a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2">Bookings </a>
+                                
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2"> Transactions </a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong3"> Transactions </a>
+                                
                             </li>
 
+                            
+
+                            
                         </ul>
                         <!-- End navigation menu -->
                     </div>
@@ -105,7 +125,7 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
                                 <div class="float-right">
                                     <h2 class="text-primary mb-0">8952</h2>
                                     <p class="text-muted mb-0 mt-2">Total Sales</p>
@@ -120,7 +140,7 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
                                 <div class="float-right">
                                     <h2 class="text-info mb-0">6521</h2>
                                     <p class="text-muted mb-0 mt-2">New Orders</p>
@@ -135,7 +155,7 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
                                 <div class="float-right">
                                     <h2 class="text-primary mb-0">4526</h2>
                                     <p class="text-muted mb-0 mt-2">New Users</p>
@@ -150,7 +170,7 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
+                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
                                 <div class="float-right">
                                     <h2 class="text-info mb-0">5621</h2>
                                     <p class="text-muted mb-0 mt-2">Unique Visitors</p>
@@ -160,122 +180,30 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-            <!-- next -->
-            <div class="row">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">8952</h2>
-                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">6521</h2>
-                                    <p class="text-muted mb-0 mt-2">New Orders</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#7c6ae7" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">4526</h2>
-                                    <p class="text-muted mb-0 mt-2">New Users</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">5621</h2>
-                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-           
-                    
 
             
-            <!-- end container-fluid -->
+
         </div>
     </div>
         <!-- end wrapper -->
 
-    
-    <!-- pop up view for bookings -->
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p> Bookings View</p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            </div>
-        </div>
-    <!-- end pop up -->
+        <!-- models section -->
 
 
-
-    <!-- pop up view for transactions -->
+         <!-- pop up view for bookings -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Booked Services</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Transactions View</p>
+                    <p> Booked Services </p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -284,21 +212,21 @@
             </div>
             </div>
         </div>
-    <!-- end pop up -->
 
-    <!-- pop up view for profile -->
+
+          <!-- pop up view for transactions -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Transactions made</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Profile View</p>
+                    <p> transactions </p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -307,21 +235,21 @@
             </div>
             </div>
         </div>
-    <!-- end pop up -->
 
-    <!-- pop up view for notifications -->
+
+          <!-- pop up view for bookings -->
         <!-- Modal -->
         <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Notifiacteion</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Notification View</p>
+                    <p> Notification </p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -330,7 +258,36 @@
             </div>
             </div>
         </div>
-    <!-- end pop up -->
+
+
+
+          <!-- pop up view for bookings -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> User Profile </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- end of model -->
 
         <!-- Footer -->
         <footer class="footer">
@@ -345,3 +302,5 @@
         <!-- End Footer -->
 
 {% endblock %}
+
+       
