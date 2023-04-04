@@ -22,7 +22,7 @@
                        <div class = "h-arrange">
 
                         <li class = "nav-lists">
-                            <a href="#"> Welcome {user.name} </a>
+                        <a href="#"> Welcome {{user}} </a>
                         </li>
 
                         <li class = "nav-lists">
@@ -203,11 +203,54 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Booked Services </p>
+                    <div class="col-lg-6">
+                        
+                        <h4 class="m-b-30 m-t-0">Booked Services List</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-dark mb-0">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col"> Service Name </th>
+                                            <th scope="col"> Service Type </th>
+                                            <th scope="col"> Time </th>
+                                            <th scope="col"> Status </th>
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    
+            </div>
+                    
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
                 </div>
             </div>
             </div>
@@ -220,17 +263,59 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Transactions made</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Transactions </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> transactions </p>
+                    <div class="col-lg-6">
+                        
+                        <h4 class="m-b-30 m-t-0">List Of Transactions</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-dark mb-0">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col"> Transaction ID  </th>
+                                            <th scope="col"> Transaction Type </th>
+                                            <th scope="col"> Amount </th>
+                                            <th scope="col"> Status </th>
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    
+            </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
                 </div>
             </div>
             </div>
@@ -274,6 +359,17 @@
                 </div>
                 <div class="modal-body">
                     <p> User Profile </p>
+                    <div class = "pro-head">
+                        <h4> Name</h4>
+                        <h4> Email </h4>
+                        <h4> Role </h4>
+                    </div>
+
+                    <div class = "pro-tail">
+                        <h5> Name</h5>
+                        <h5> Email </h5>
+                        <h5> Role </h5>
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

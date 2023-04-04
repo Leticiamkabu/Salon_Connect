@@ -190,6 +190,17 @@ a:focus {
   margin-top: 5px;
 }
 
+.colums {
+  display:flex;
+  justify-content:space-between;
+  flex-direction:row;
+  flex-wrap:wrap;
+  }
+
+.colums div {
+  width:50%;
+  }
+  
 .dropdown-menu {
   padding: 4px 0;
   border: 0;
@@ -836,6 +847,8 @@ textarea.form-control {
 
 .m-t-0 {
   margin-top: 0px;
+  color : #00FFAD;
+  font-family: emoji;
 }
 
 .m-t-10 {
@@ -1399,8 +1412,8 @@ File: Components
 }
 
 .btn-primary {
-  background-color: #6cbafa !important;
-  border: 1px solid #6cbafa !important;
+  background-color: #00FFAD !important;
+  border: 1px solid #00FFAD !important;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
@@ -1499,13 +1512,41 @@ File: Components
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-}
+  /* border-radius: 20%; */
+  height: 200px;
+  width: 250px;
+  background-color: #00FFAD;
 
+}
 .card .card-heading {
   border: none !important;
   padding: 10px 20px;
+  /* border-radius: 10%;  */
 }
 
+.card .card-heading .image {
+  position: relative;
+  border-radius: 5%;
+  border-bottom-right-radius: 100%;
+  /* border-top-right-radius:50% ; */
+
+  height: 125px;
+  width: 250px;
+  left:-25px;
+  top: -25px;
+  background-color: #000000;
+  padding: 10px 20px;
+  /* border-radius: 10%;  */
+}
+
+.card .card-heading .s_name h4{
+  position: relative;
+  
+  left: 50px;
+  top: 100px;
+  color: #fffbfb;
+ 
+}
 .card .card-title {
   font-size: 16px;
   color: #ffffff;
@@ -4141,7 +4182,7 @@ File: Responsive
   display: none;
   position: absolute;
   background-color: #00FFAD;
-  width: 100px;
+  width: 105px;
   height: 100px;
   box-shadow: 0px 8px 16px 0px #6feec6;
   z-index: 1;
@@ -4167,7 +4208,7 @@ File: Responsive
   position: relative;
   right:35px;
   padding: 10px 10px;
-  width: 105px;
+  width: 95px;
   display: block;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -4179,3 +4220,7 @@ File: Responsive
   
 }
 
+
+/* .container-fluid hr {
+  color: goldenrod;
+} */

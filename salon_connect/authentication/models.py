@@ -12,4 +12,4 @@ ROLE_SELECTION = (
 )
 
 class UserRegistration(AbstractUser):
-    role = models.CharField(max_length = 20, choices= ROLE_SELECTION , default = None)
+    role = models.CharField(max_length = 20, choices= ROLE_SELECTION , default = 'user')

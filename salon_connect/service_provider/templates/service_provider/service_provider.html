@@ -22,7 +22,7 @@
                        <div class = "h-arrange">
 
                         <li class = "nav-lists">
-                            <a href="#"> Welcome {user.name} </a>
+                            <a href="#"> Welcome {{user}} </a>
                         </li>
 
                         <li class = "nav-lists">
@@ -31,12 +31,12 @@
                                     <ul class = "h-arrange-sub">
                             
                                         <li class = "h-arrange-list">
-                                            <a data-toggle="modal" data-target="#exampleModalLong4"> Notification</a>
+                                            <a data-toggle="modal" data-target="#exampleModalLong9"> Notification</a>
                                 
                                         </li>
 
                                         <li class = "h-arrange-list">
-                                            <a data-toggle="modal" data-target="#exampleModalLong5">Profile </a>
+                                            <a data-toggle="modal" data-target="#exampleModalLong10">Profile </a>
                                         </li>
                                     </ul>
                             <div>
@@ -74,21 +74,21 @@
                         <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="{% url 'user:user_dashboard'%}"><i class="ti-home"></i> Dashboard</a>
+                                <a href="{% url 'service_provider:service_provider_dashboard'%}"><i class="ti-home"></i> Dashboard</a>
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong1">Create Services </a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong">Create Services </a>
                                 
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong2">Bookings </a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong7">Bookings </a>
                                 
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalLong3"> Transactions </a>
+                                <a href="#" data-toggle="modal" data-target="#exampleModalLong8"> Transactions </a>
                                 
                             </li>
 
@@ -124,7 +124,14 @@
                 </div>
             </div>
 
-            <div class="row">
+            <hr>
+            {% if create_service.first_name == none %}
+
+            <h4> No service created. to creaate a service use the create service button above.
+                you are not logged in </h4>
+    
+            
+            {% comment %} <div class="row">
                 <div class="col-sm-6 col-xl-3">
                     <div class="card">
                         <div class="card-heading p-4">
@@ -188,7 +195,34 @@
 
             
 
-        </div>
+        </div> {% endcomment %}
+
+        <h4> 
+            you are logged in as {{username}} </h4>
+            
+        {% else %}
+            
+            
+            
+                
+                <div class="col-sm-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-heading p-4">
+                            <div class = "image"> 
+                                <img src="{{ create_service.image.urls}}" alt="connect" style="max-height:300px">  
+                            </div>
+                                <div class = "s_name">
+                                    <h4> {{ user_services.salon_name}} </h4>
+                                </div> 
+                                    
+                        </div>
+                    </div>
+               
+                
+                </div>
+            
+            
+        {% endif %}
     </div>
         <!-- end wrapper -->
 
@@ -196,7 +230,7 @@
 
         <!-- pop up view for creating services -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -206,130 +240,115 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Create service </p>
+                    {% comment %} <p> Create service </p> {% endcomment %}
 
-                    <form class="form-horizontal m-t-20", action="", method ="POST">
+                    <form class="form-horizontal m-t-20", action="", method ="POST", enctype="multipart/form-data">
                         {% csrf_token %}
 
+                    <div class="colums">
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.first_name.label}}
                                 <div class="form-control">
-                                    {{create_service.first_name.label}}
                                     {{create_service.first_name}}
-                                </div>
-                                {% comment %} <input class="form-control" type="text" required="" placeholder="Username"> {% endcomment %}
+                                    
+                                </div> 
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.last_name.label}}
                                 <div class="form-control">
-                                    {{create_service.last_name.label}}
                                     {{create_service.last_name}}
                                 </div>
-                                {% comment %} {{form.email}} {% endcomment %}
-                                {% comment %} <input class="form-control" type="email" required="" placeholder="Email"> {% endcomment %}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.salon_name.label}}
                                 <div class="form-control">
-                                    {{create_service.salon_name.label}}
                                     {{create_service.salon_name}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.phone_number.label}}
                                 <div class="form-control">
-                                    {{create_service.first_name.label}}
-                                    {{create_service.first_name}}
+                                    {{create_service.phone_number}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.salon_services.label}}
                                 <div class="form-control">
-                                    {{create_service.salon_services.label}}
                                     {{create_service.salon_services}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.opening_and_closing_time.label}}
                                 <div class="form-control">
-                                    {{create_service.opening_and_closing_time.label}}
                                     {{create_service.opening_and_closing_time}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.location.label}}
                                 <div class="form-control">
-                                    {{create_service.location.label}}
                                     {{create_service.location}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.image.label}}
                                 <div class="form-control">
-                                    {{create_service.image.label}}
                                     {{create_service.image}}
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
+                                </div>
                             </div>
-                        </div>
+                        </div> 
 
                         <div class="form-group">
                             <div class="col-12">
+                                {{create_service.salon_color.label}}
                                 <div class="form-control">
-                                    {{create_service.salon_color.label}}
                                     {{create_service.salon_color}}
                                 </div>
-                                {% comment %} <input class="form-control" type="password" required="" placeholder="Password"> {% endcomment %}
                             </div>
-                        </div>
+                        </div> 
+                             
                         
 
-                        <div class="form-group">
-                            <div class="col-12">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="checkbox-signup" type="checkbox" checked="checked">
-                                    <label for="checkbox-signup">
-                                        I accept <a href="#">Terms and Conditions</a>
-                                    </label>
-                                </div>
 
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group text-center m-t-40">
-                            <div class="col-12">
-                                <button class="btn btn-primary btn-block btn-lg waves-effect waves-light" type="submit">Create Service</button>
-                            </div>
+                    <div class="form-group text-center m-t-40">
+                        <div class="col-12">
+                            <button class="btn btn-primary btn-block btn-lg waves-effect waves-light" type="submit">Create Service</button>
                         </div>
+                    </div>
 
-                        <div class="form-group m-t-30 m-b-0">
-                            <div class="col-sm-12 text-center">
-                                <a href="{% url 'auth:log-in' %}" class="text-muted">Already have account?</a>
-                            </div>
+                    <div class="form-group m-t-30 m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <a href="{% url 'auth:log-in' %}" class="text-muted">Already have account?</a>
                         </div>
-                    </form>
+                    </div>
+                               
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
                 </div>
             </div>
             </div>
@@ -338,7 +357,7 @@
 
          <!-- pop up view for bookings -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -348,11 +367,54 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> Booked Services </p>
+                    
+                    <div class="col-lg-6">
+                        
+                                <h4 class="m-b-30 m-t-0">Booked Services List</h4>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-dark mb-0">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col"> Service Name </th>
+                                                    <th scope="col"> Service Type </th>
+                                                    <th scope="col"> Time </th>
+                                                    <th scope="col"> Status </th>
+
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
                 </div>
             </div>
             </div>
@@ -361,21 +423,63 @@
 
           <!-- pop up view for transactions -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Transactions made</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Transactions </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> transactions </p>
+                    <div class="col-lg-6">
+                        
+                        <h4 class="m-b-30 m-t-0">List Of Transactions</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-dark mb-0">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col"> Transaction ID  </th>
+                                            <th scope="col"> Transaction Type </th>
+                                            <th scope="col"> Amount </th>
+                                            <th scope="col"> Status </th>
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    
+            </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
                 </div>
             </div>
             </div>
@@ -384,7 +488,7 @@
 
           <!-- pop up view for bookings -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -408,7 +512,7 @@
 
           <!-- pop up view for bookings -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

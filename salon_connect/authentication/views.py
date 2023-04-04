@@ -29,10 +29,10 @@ def login_view(request):
         if user is not None:
             print("yes")
             login(request, user)
-            if user.role == "User":
+            if user.role == "U":
                 return redirect('user:user_dashboard' )
 
-            elif user.role == "Service_Provider":
+            elif user.role == "S":
                 return redirect('service_provider:service_provider_dashboard' )
 
         else:
@@ -46,6 +46,7 @@ def login_view(request):
 def register_view(request):
     
     if request.method == "POST":
+        
         username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
@@ -53,27 +54,29 @@ def register_view(request):
         roles = request.POST['role']
         
         
-        if roles == "User":
-            user = UserRegistration(
+        print(roles)
+        
+        if roles == "U":
+            user = UserRegistration.objects.create(
             username = username,
             email = email,
             role = roles
             )
+            user.set_password(password1)
+            user.save()
             
-        if roles == "Service_Provider":
-            user = UserRegistration(
+        if roles == "S":
+            user = UserRegistration.objects.create(
             username = username,
             email = email,
             role = roles
             )
 
         
-        user.set_password(password1)
-        user.save()
+            user.set_password(password1)
+            user.save()
         
         return redirect('auth:log-in' )
-        # else:
-        #         messages.error(request, 'Account was not created')
     else:
         form = RegisterationForm()
     context = {
