@@ -113,75 +113,45 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h4 class="page-title m-0">Dashboard</h4>
+                                <h4 class="page-title m-0"> User Dashboard</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
+            <hr>
             <div class="row">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">8952</h2>
-                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">6521</h2>
-                                    <p class="text-muted mb-0 mt-2">New Orders</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% if services %}
+                    {% for service in services %}
+                        <div class="col-md-3" >
+                            <div class="card">
+                                <div class="card-heading p-4">
+                                    <div class = "image"> 
+                                        <img src="{{service.image.url}}" alt="connect" >  
+                                    </div>
+                                    <div class = "s_name">
+                                            <h4> {{service.salon_name}} </h4>
+                                            <a href = "#" data-toggle="modal" data-target="#exampleModalLong6"> View service </a>
+                                            {% comment %} <a href = "#" > Book service </a> {% endcomment %}
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">4526</h2>
-                                    <p class="text-muted mb-0 mt-2">New Users</p>
+                                    </div> 
+                                    <div class = "book-services">
+                                        <a href = "{% url 'salon:bookings_view' %}"> Book Service </a>
+                                    </div>
+                                            
                                 </div>
-                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    {% endfor %}
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">5621</h2>
-                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% else %}
+                    <h4> There are currently no services available. 
+                    <br> Come back nect time :) </h4>
+
+                {% endif %}
             </div>
-
             
 
         </div>
@@ -378,6 +348,27 @@
             </div>
             </div>
         </div>
+
+        <div class="modal fade" id="exampleModalLong6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Service Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p> Service Details </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
 
 
 

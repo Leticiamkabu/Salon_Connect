@@ -27,7 +27,7 @@
 
                         <li class = "nav-lists">
                             <div class = "drop">
-                                <a href="#"> Components </a>
+                                <a href="#"> More </a>
                                     <ul class = "h-arrange-sub">
                             
                                         <li class = "h-arrange-list">
@@ -117,7 +117,7 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h4 class="page-title m-0">Dashboard</h4>
+                                <h4 class="page-title m-0"> Service Provider Dashboard</h4>
                             </div>
                         </div>
                     </div>
@@ -125,104 +125,58 @@
             </div>
 
             <hr>
-            {% if create_service.first_name == none %}
+            <div class = "row">
+                {% if services  %}
+            {% comment %} <div class = "row"> {% endcomment %}
 
-            <h4> No service created. to creaate a service use the create service button above.
-                you are not logged in </h4>
-    
+                {% for service in services %}
+                    {% if service.user == request.user %}
             
-            {% comment %} <div class="row">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">8952</h2>
-                                    <p class="text-muted mb-0 mt-2">Total Sales</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <div class="col-md-3" >
+                            <div class="card">
+                                <div class="card-heading p-4">
+                                    <div class = "image"> 
+                                        <img src="{{ service.image.url }}" alt="connect" >  
+                                    </div>
+                                    <div class = "s_name">
+                                            <h4> {{ service.salon_name }} </h4>
+                                            <a href = "#" data-toggle="modal" data-target="#exampleModalLong11"> Edit service </a>
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">6521</h2>
-                                    <p class="text-muted mb-0 mt-2">New Orders</p>
+                                    </div> 
+                                            
                                 </div>
-                                <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    {% endif %}
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">4526</h2>
-                                    <p class="text-muted mb-0 mt-2">New Users</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>42% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">5621</h2>
-                                    <p class="text-muted mb-0 mt-2">Unique Visitors</p>
-                                </div>
-                                <p class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+
+                {% endfor %}
             </div>
+        
+            
+        
+            
+           
 
+        
             
-
-        </div> {% endcomment %}
-
-        <h4> 
-            you are logged in as {{username}} </h4>
+            {% else %}
             
-        {% else %}
-            
-            
+            <div class = 'no-service'>
+                <h4> 
+                    No service created. <br>To create a service, use the create service button above.<br> THANK YOU
+                 </h4>
+            </div>
             
                 
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-heading p-4">
-                            <div class = "image"> 
-                                <img src="{{ create_service.image.urls}}" alt="connect" style="max-height:300px">  
-                            </div>
-                                <div class = "s_name">
-                                    <h4> {{ user_services.salon_name}} </h4>
-                                </div> 
-                                    
-                        </div>
-                    </div>
-               
                 
-                </div>
-            
-            
-        {% endif %}
+            {% endif %}
+           
+
+        </div>
     </div>
         <!-- end wrapper -->
 
@@ -522,7 +476,51 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p> User Profile </p>
+                    {% comment %} <p> User Profile </p> {% endcomment %}
+                    <div class = "profile-image">
+                        image
+                        <img> </img>
+                    </div>
+
+                    <div class = "profile-username">
+                        <h4>Username :</h4>
+                        {{username}}
+                    </div>
+
+                    <div class = "profile-email">
+                        <h4> Email : </h4>
+                        {{email}}
+                    </div>
+
+                    <div class = "profile-password">
+                        <h4> Password : </h4>
+                        {{password}}
+                    </div>
+                    <div class= "change_password_button">
+                        <a href = "#"> Change Password </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                {% comment %} <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="exampleModalLong11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Services</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <h5> edit service </h5>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -531,9 +529,6 @@
             </div>
             </div>
         </div>
-
-
-
 
 
         <!-- end of model -->

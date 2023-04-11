@@ -5,5 +5,6 @@ from django.urls import path
 app_name = 'salon'
 
 urlpatterns = [
-    path('', click , name = "index"),
+    path('', booking_view , name = 'bookings_view'),
+    
 ]

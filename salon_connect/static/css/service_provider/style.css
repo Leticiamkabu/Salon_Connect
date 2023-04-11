@@ -612,6 +612,88 @@ code {
   padding: 10px 0;
 }
 
+.modal .modal-dialog .modal-content .modal-body .profile-image {
+  position: relative;
+  background-color: #00FFAD;
+  align-self: center;
+  border-radius: 100%;
+  height: 110px;
+  width: 110px;
+  left: 176px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-username {
+  position: relative;
+  background-color: #00FFAD;
+  align-self: center;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  height: 150px;
+  width: 150px;
+  left: 45px;
+  top: 30px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-username h4 {
+  position: relative;
+  color: #f6faf9;
+  left: 30px;
+  top: 30px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-email {
+  position: relative;
+    background-color: #00FFAD;
+    align-self: center;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    height: 150px;
+    width: 200px;
+    left: 195px;
+    top: -130px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-email h4{
+  position: relative;
+  color: #f7f8f8;
+  left: -120px;
+  top: 70px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-password {
+  position: relative;
+  height: 0px;
+  
+}
+
+.modal .modal-dialog .modal-content .modal-body .profile-password h4{
+  position: relative;
+    color: #fbfdfd;
+    left: 75px;
+    top: -180px;
+}
+
+.modal .modal-dialog .modal-content .modal-body .change_password_button {
+  position: relative;
+    height: 40px;
+    background-color: #00FFAD;
+    width: 120px;
+    top: -115px;
+    left: 180px;
+    border-radius: 7%;
+  
+}
+
+.modal .modal-dialog .modal-content .modal-body .change_password_button a {
+  position: relative;
+    /* height: 5px; */
+    color: rgb(250, 247, 247);
+    top: 10px;
+    font-family: fangsong;
+    left: 13px;
+  
+}
+
 .modal .modal-dialog .modal-content .modal-footer {
   padding-top: 15px;
 }
@@ -1539,14 +1621,53 @@ File: Components
   /* border-radius: 10%;  */
 }
 
+.card .card-heading .image img {
+  position: relative;
+  height: 125px;
+  width: 251px;
+  left: -20px;
+  top: -10px;
+  border-bottom-right-radius: 90%;
+
+}
+
 .card .card-heading .s_name h4{
   position: relative;
-  
-  left: 50px;
-  top: 100px;
+  font-family: cursive;
+  /* left: 69px; */
+  top: auto;
   color: #fffbfb;
+  text-align: center;
  
 }
+
+.card .card-heading .s_name a{
+  position: relative;
+  font-family: cursive;
+  left: 140px;
+  top: -15px;
+  color: #fffbfb;
+  text-align: center;
+ 
+}
+
+.card .card-heading .book-services {
+  position: relative;
+  
+ 
+}
+
+.card .card-heading .book-services a {
+  position: relative;
+  color: rgb(255, 252, 252);
+  top: -35px;
+  left: -19px;
+  font-family: cursive;
+  
+ 
+}
+
+
 .card .card-title {
   font-size: 16px;
   color: #ffffff;

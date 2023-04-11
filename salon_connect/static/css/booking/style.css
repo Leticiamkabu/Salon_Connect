@@ -18,18 +18,15 @@
 
 .booking-form {
 	position: relative;
-	max-width: 600px;
+	max-width: 642px;
 	width: 100%;
 	margin: auto;
 	padding: 40px;
 	overflow: hidden;
-	top:110px !important;
-	background-image:url(" ");
+	background-image: url('../img/background.jpg');
 	background-size: cover;
 	border-radius: 5px;
 	z-index: 20;
-	/* height: 500px; */
-	
 }
 
 .booking-form::before {
